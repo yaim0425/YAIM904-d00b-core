@@ -3,6 +3,7 @@ Version: 0.0.3
 Date: 2026-01-31
   Info:
     - Ensure that all objects have a subgroup and order.
+    - The dependency is added to SE and Quality.
 
 Version: 0.0.2
 Date: 2026-01-03
