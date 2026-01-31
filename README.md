@@ -6,7 +6,7 @@
 
 **YAIM904 d00b Core** is a **required support MOD** for other YAIM904 mods.
 
-By itself, this MOD does **not add new items, machines, or gameplay mechanics**. Its purpose is to work silently in the background and make sure other YAIM904 mods run correctly, smoothly, and with maximum compatibility.
+By itself, this MOD does **not add new items, machines, or gameplay mechanics**. Its purpose is to work silently in the background and make sure other YAIM904 mods run correctly, smoothly and with maximum compatibility.
 
 If you are using any MOD from the **YAIM904** series, this core MOD provides:
 

@@ -1079,6 +1079,31 @@ function This_MOD.change_orders(agroup_recipe)
 
 
     --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    --- Agrupar los objetos
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+    --- Inicializar las vaiables
+    local Items = {}
+
+    --- Agrupar los objetos
+    for _, values in pairs(data.raw) do
+        for _, value in pairs(values) do
+            if value.stack_size then
+                table.insert(Items, value)
+                if not value.subgroup then
+                    value.subgroup = "other"
+                end
+            end
+        end
+    end
+
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+
+
+
+
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     --- Objetos, recetas y fluidos
     --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
@@ -1087,7 +1112,7 @@ function This_MOD.change_orders(agroup_recipe)
     Source = {}
 
     --- Posicionar los objetos y fluidos
-    for _, elements in pairs({ GMOD.items, GMOD.fluids }) do
+    for _, elements in pairs({ Items, GMOD.fluids }) do
         for _, element in pairs(elements) do
             if element.subgroup then
                 --- Elementos a agrupar
@@ -1171,7 +1196,6 @@ function This_MOD.change_orders(agroup_recipe)
             if recipe.results[1].type ~= "item" then break end
             local Item = GMOD.items[recipe.results[1].name]
             if not Item then break end
-            if not Item.order then Item.order = "999999" end
 
             --- Posición actual
             Orders[Item.name] =
