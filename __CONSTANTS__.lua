@@ -56,14 +56,14 @@ if not data.raw["item-subgroup"] then return end
 if not data.raw["virtual-signal"] then return end
 
 --- Para que Visual Studio Code no moleste
-_G.log = _G.log or function(...) end
-_G.prototypes = _G.prototypes or {}
-_G.settings = _G.settings or {}
-_G.defines = _G.defines or {}
-_G.helpers = _G.helpers or {}
-_G.script = _G.script or {}
-_G.game = _G.game or {}
-_G.mods = _G.mods or {}
+_G.log = _G.log or nil
+_G.prototypes = _G.prototypes or nil
+_G.settings = _G.settings or nil
+_G.defines = _G.defines or nil
+_G.helpers = _G.helpers or nil
+_G.script = _G.script or nil
+_G.game = _G.game or nil
+_G.mods = _G.mods or nil
 
 --- Subgrupos existentes, se usa con frecuencia
 GMOD.subgroups = data.raw["item-subgroup"]
