@@ -1,9 +1,9 @@
 {
   "name": "YAIM904-d00b-core",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "title": "YAIM904 d00b Core",
   "author": "YAIM904",
-  "factorio_version": "2.0",
+  "factorio_version": "2.1",
   "description": "Base utility library intended to be used by other MODs developed by the user YAIM904. [[I accept suggestions]]",
   "homepage": "https://github.com/yaim0425/YAIM904-d00b-core",
   "dependencies": [
