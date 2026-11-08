@@ -458,9 +458,9 @@ function GMOD.number_unit(value)
     local Number, Prefix, Unit = split_string()
 
     --- Validar si la cadena es un numero valido
-    if not Number then return nil, nil end
+    if not Number then return end
     if tonumber(Number) == 0 then return nil, Unit end
-    if not is_valid_number(Number) then return nil, nil end
+    if not is_valid_number(Number) then return end
 
     --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
@@ -502,6 +502,65 @@ function GMOD.number_unit(value)
 end
 
 ---------------------------------------------------------------------------------------------------
+
+--- Crea un array separando por espacio el texto dato
+--- @param text string
+--- @return table
+function GMOD.split(text)
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    --- Contenedor de salida
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+    local Output = {}
+
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+
+
+
+
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    --- Separar las palabras
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+    for word in text:gmatch("%S+") do
+        Output[#Output + 1] = word
+    end
+
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+
+
+
+
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    --- Correcciones
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+    if #Output > 1 then
+        local last = Output[#Output]
+        local previous = Output[#Output - 1]
+
+        if previous:match("%w+%-%w+$") and last:match("^[%w%-]+$") then
+            Output[#Output - 1] = previous .. " " .. last
+            Output[#Output] = nil
+        end
+    end
+
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+
+
+
+
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    --- Devolver el resultado
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+    return Output
+
+    --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+end
 
 --- Copia cada tabla se copia siempre, sin compartir referencias
 --- @param value any
