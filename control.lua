@@ -304,12 +304,12 @@ end
 ---------------------------------------------------------------------------------------------------
 
 --- Crearción de:
---- GMOD.items
+--- GMOD.item
 --- GMOD.tiles
---- GMOD.fluids
+--- GMOD.fluid
 --- GMOD.recipes
---- GMOD.entities
---- GMOD.equipments
+--- GMOD.entity
+--- GMOD.equipment
 function This_MOD.filter_data()
     --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     --- Agregar el suelo a GMOD.Tiles
@@ -356,10 +356,10 @@ function This_MOD.filter_data()
     --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
     --- Renombrar las variables
-    GMOD.items = prototypes.item
-    GMOD.fluids = prototypes.fluid
-    GMOD.entities = prototypes.entity
-    GMOD.equipments = prototypes.equipment
+    GMOD.item = prototypes.item
+    GMOD.fluid = prototypes.fluid
+    GMOD.entity = prototypes.entity
+    GMOD.equipment = prototypes.equipment
 
     --- Agrupar los suelos
     GMOD.tiles = {}
